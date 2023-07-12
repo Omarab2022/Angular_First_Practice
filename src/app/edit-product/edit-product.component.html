@@ -1,0 +1,25 @@
+<div class="p-3">
+    <div class="card">
+        <div class="card-header">
+            Product id = {{productid}}
+        </div>
+        <div class="card-body" *ngIf="productformgroup">
+            
+            <form [formGroup]="productformgroup" (ngSubmit)="updateProduct()">
+                <div class="mb-3">
+                    <label class="form-label" >name</label>
+                    <input class="form-control" formControlName ="name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" >price</label>
+                    <input class="form-control" formControlName ="price">
+                </div>
+                <div class="mb-3 ">
+                    <label class="form-label" >checked</label>
+                    <input type="checkbox" class="form-check-input " formControlName ="checked">
+                </div>
+              <button [disabled]="productformgroup.invalid" class="btn btn-danger">save</button>
+            </form>
+        </div>
+    </div>
+</div>
